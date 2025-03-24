@@ -20,9 +20,9 @@ public class TodoController {
     @QueryMapping
     public Window<TodoDto> getTodos() {
         List<TodoDto> todos = client.sql("SELECT * FROM todo")
-                .query(Todo.class)
+                .query(TodoDao.class)
                 .stream()
-                .map(todo -> new TodoDto(todo.publicId(), todo.title()))
+                .map(todoDao -> new TodoDto(todoDao.publicId(), todoDao.title()))
                 .toList();
         return Window.from(todos, ScrollPosition::offset);
     }
