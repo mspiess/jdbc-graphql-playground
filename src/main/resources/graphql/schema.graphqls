@@ -1,0 +1,7 @@
+type Query {
+    getTodos: TodoConnection
+}
+
+type Todo {
+    title: String!
+}

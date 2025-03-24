@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: todo/0000_create_table.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,19 @@
+databaseChangeLog:
+    - changeSet:
+        id: 1
+        author: mspiess
+        changes:
+            - createTable:
+                tableName: todo
+                columns:
+                    - column:
+                        name: id
+                        type: UUID
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                    - column:
+                        name: title
+                        type: VARCHAR
+                        constraints:
+                            nullable: false
