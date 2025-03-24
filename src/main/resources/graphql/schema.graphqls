@@ -1,7 +1,10 @@
+scalar UUID
+
 type Query {
     getTodos: TodoConnection
 }
 
 type Todo {
     title: String!
+    id: UUID!
 }

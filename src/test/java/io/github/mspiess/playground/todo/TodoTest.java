@@ -54,6 +54,7 @@ public class TodoTest {
                                     getTodos {
                                         edges {
                                             node {
+                                                id
                                                 title
                                             }
                                         }
@@ -64,8 +65,12 @@ public class TodoTest {
                 .errors()
                 .verify()
                 .path("getTodos.edges[*].node")
-                .entityList(Todo.class)
+                .entityList(TodoDto.class)
                 .hasSize(1)
-                .satisfies(list -> assertThat(list.getFirst().title()).isEqualTo("Some Title"));
+                .satisfies(list -> {
+                    var todo = list.getFirst();
+                    assertThat(todo.title()).isEqualTo("Some Title");
+                    assertThat(todo.id()).isNotNull();
+                });
     }
 }
