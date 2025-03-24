@@ -1,5 +1,5 @@
 schema:
-  - ./generated-types.graphqls
+  - ./connection-types.graphqls
   - ./src/main/resources/graphql/**/*.graphqls
   - ./src/main/resources/graphql/**/*.gqls
 documents: '**/*.graphql'
