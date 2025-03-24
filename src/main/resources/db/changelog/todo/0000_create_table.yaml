@@ -8,9 +8,17 @@ databaseChangeLog:
                 columns:
                     - column:
                         name: id
-                        type: UUID
+                        type: BIGINT
+                        autoIncrement: true
                         constraints:
                             primaryKey: true
+                            nullable: false
+                    - column:
+                        name: publicId
+                        type: UUID
+                        defaultValueComputed: ${generate_UUID}
+                        constraints:
+                            unique: true
                             nullable: false
                     - column:
                         name: title

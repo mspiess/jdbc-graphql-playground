@@ -1,4 +1,16 @@
 databaseChangeLog:
+  - property:
+      dbms: h2
+      name: generate_UUID
+      value: RANDOM_UUID(4)
+  - property:
+      dbms: postgresql
+      name: generate_UUID
+      value: gen_random_uuid ()
+  - property:
+      dbms: mariadb
+      name: generate_UUID
+      value: UUID_v4()
   - include:
       file: todo/0000_create_table.yaml
       relativeToChangelogFile: true
